@@ -1,4 +1,6 @@
 #!/bin/bash
+# Note: Must be run as root!
+
 
 LINE=____________________________________________
 
@@ -38,14 +40,12 @@ do
        sudo -u $user -H sh -c "pkill -9 -f tomcat" &> dev/null
      fi
 ## START TOMCAT
-
   else
      echo "CURRENTLY NO TOMCAT SERVER RUNNING ON $user"
      echo
      echo "STARTING TOMCAT FOR INSTANCE: $user"
      echo
      sudo -u $user -H sh -c "bash ./tstart.sh"
-
   fi
 
   else
